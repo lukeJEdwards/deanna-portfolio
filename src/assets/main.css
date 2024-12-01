@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+#app {
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+  flex-direction: row-reverse;
+}
+
+.parkinsans {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
