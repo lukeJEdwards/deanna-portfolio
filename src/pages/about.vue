@@ -8,7 +8,7 @@ definePage({
     <div class="px-48">
         <h1 class="font-bold text-2xl w-full text-center mt-4 mb-16 parkinsans">About</h1>
         <div class="flex items-center">
-            <img src="https://dummyimage.com/9:16x720" class="mr-8" />
+            <img src="@/assets/home/me_character.webp" class="mr-8 w-[480px]" />
             <p>
                 Originally from Brighton, Deanna is an illustrator with a unique focus on bright, bold colour palettes
                 that

@@ -26,7 +26,6 @@ declare module 'vue-router/auto-routes' {
     'Still as a tree': RouteRecordInfo<'Still as a tree', '/Film_FPM/As_still_as_a_tree', Record<never, never>, Record<never, never>>,
     'The matriarchy': RouteRecordInfo<'The matriarchy', '/Film_FPM/the_matriarchy', Record<never, never>, Record<never, never>>,
     'Portfolio': RouteRecordInfo<'Portfolio', '/portfolio', Record<never, never>, Record<never, never>>,
-    'Aqua libra': RouteRecordInfo<'Aqua libra', '/portfolio/aqua_libra', Record<never, never>, Record<never, never>>,
     'Hurricane (BHS)': RouteRecordInfo<'Hurricane (BHS)', '/portfolio/hurricane_BHS', Record<never, never>, Record<never, never>>,
     'Hurricane(Video)': RouteRecordInfo<'Hurricane(Video)', '/portfolio/Hurricane_Video', Record<never, never>, Record<never, never>>,
     'Mocha': RouteRecordInfo<'Mocha', '/portfolio/Mocha', Record<never, never>, Record<never, never>>,
