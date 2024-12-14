@@ -19,21 +19,6 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     'Home': RouteRecordInfo<'Home', '/', Record<never, never>, Record<never, never>>,
-    'About': RouteRecordInfo<'About', '/about', Record<never, never>, Record<never, never>>,
-    'Contact': RouteRecordInfo<'Contact', '/contact', Record<never, never>, Record<never, never>>,
-    'Editoral': RouteRecordInfo<'Editoral', '/editorial', Record<never, never>, Record<never, never>>,
-    'Film FMP': RouteRecordInfo<'Film FMP', '/Film_FPM', Record<never, never>, Record<never, never>>,
-    'Still as a tree': RouteRecordInfo<'Still as a tree', '/Film_FPM/As_still_as_a_tree', Record<never, never>, Record<never, never>>,
-    'The matriarchy': RouteRecordInfo<'The matriarchy', '/Film_FPM/the_matriarchy', Record<never, never>, Record<never, never>>,
-    'Portfolio': RouteRecordInfo<'Portfolio', '/portfolio', Record<never, never>, Record<never, never>>,
-    'Hurricane (BHS)': RouteRecordInfo<'Hurricane (BHS)', '/portfolio/hurricane_BHS', Record<never, never>, Record<never, never>>,
-    'Hurricane(Video)': RouteRecordInfo<'Hurricane(Video)', '/portfolio/Hurricane_Video', Record<never, never>, Record<never, never>>,
-    'Mocha': RouteRecordInfo<'Mocha', '/portfolio/Mocha', Record<never, never>, Record<never, never>>,
-    'Personal': RouteRecordInfo<'Personal', '/portfolio/personal', Record<never, never>, Record<never, never>>,
-    'The valentine flower trail': RouteRecordInfo<'The valentine flower trail', '/portfolio/valentine', Record<never, never>, Record<never, never>>,
-    'Publications': RouteRecordInfo<'Publications', '/publications', Record<never, never>, Record<never, never>>,
-    'Reportage': RouteRecordInfo<'Reportage', '/publications/reportage', Record<never, never>, Record<never, never>>,
-    'Spider the artisist by udide okwanka': RouteRecordInfo<'Spider the artisist by udide okwanka', '/publications/spider_udide_okwanka', Record<never, never>, Record<never, never>>,
-    'Visual essay': RouteRecordInfo<'Visual essay', '/publications/visual_essay', Record<never, never>, Record<never, never>>,
+    '/MultiRoute': RouteRecordInfo<'/MultiRoute', '/MultiRoute', Record<never, never>, Record<never, never>>,
   }
 }

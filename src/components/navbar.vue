@@ -5,9 +5,22 @@ import { computed } from 'vue';
 import { Icon } from '@iconify/vue';
 
 import nav_dropdown from './nav_dropdown.vue';
+import { useStore } from '@/store/store';
+import { storeToRefs } from 'pinia';
+
+const { routes } = storeToRefs(useStore())
+
 
 const router = useRouter()
-const dropdownRoutes = computed(() => router.options.routes.filter(route => route.children))
+
+
+routes.value.forEach(r => router.addRoute(
+    {
+        path: `/${r.name == "Home" ? ' ' : r.name}`,
+        component: () => import("@/pages/MultiRoute.vue"),
+        name: r.name
+    }
+))
 
 </script>
 
@@ -22,25 +35,9 @@ const dropdownRoutes = computed(() => router.options.routes.filter(route => rout
             </a>
         </div>
         <ul class="flex flex-col gap-8">
-            <li>
-                <RouterLink to="/" class="hover:text-slate-200">
-                    Home
-                </RouterLink>
-            </li>
-            <li>
-                <RouterLink to="/editorial" class="hover:text-slate-200">
-                    Editoral
-                </RouterLink>
-            </li>
-            <nav_dropdown v-for="route, i in dropdownRoutes" :key="i" :route="route" />
-            <li>
-                <RouterLink to="/about" class="hover:text-slate-200">
-                    About
-                </RouterLink>
-            </li>
-            <li>
-                <RouterLink to="/contact" class="hover:text-slate-200">
-                    Contact
+            <li v-for="route in routes">
+                <RouterLink :to="`/${route.name}`" class="hover:text-slate-200">
+                    {{ route.name }}
                 </RouterLink>
             </li>
         </ul>
