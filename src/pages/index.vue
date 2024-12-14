@@ -1,3 +1,7 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
     <div>
         <h1 class="font-bold text-2xl w-full text-center mt-4 mb-16 parkinsans">Deanna Wiggs Illustration</h1>
@@ -24,13 +28,3 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-definePage({
-    name:'Home'
-})
-</script>
-
-<style scoped>
-
-</style>

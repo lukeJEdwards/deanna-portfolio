@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { useRouter, RouterLink } from 'vue-router';
-import { computed } from 'vue';
-
 import { Icon } from '@iconify/vue';
 
-import nav_dropdown from './nav_dropdown.vue';
 import { useStore } from '@/store/store';
 import { storeToRefs } from 'pinia';
 
