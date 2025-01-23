@@ -1,18 +1,33 @@
 import { defineStore } from "pinia";
-import { useAsyncState } from "@vueuse/core";
 import { useSanityQuery } from "@/composables/useSanityQuery";
 
-import type { Navigation_category } from "@/types/sanity.types";
+import type { Navigation_category, Project } from "@/types/sanity.types";
+import { computed, reactive, ref, type Reactive, type Ref } from "vue";
+
+
+interface queryResult {
+  projects:Project[],
+  routes:Navigation_category[]
+}
+
+const routes_query = `*[_type == "navigation_category"]`;
+const project_query = 
 
 
 export const useStore = defineStore("store", () => {
-  const query = `*[_type == "navigation_category"]`;
 
-  const { state: routes } = useAsyncState(
-    useSanityQuery<Navigation_category[]>(query),
-    []
-  );
+  const routes:Ref<Navigation_category[]> = ref([])
+  const projects: Reactive<{[index:string]:Project}> = reactive({})
+
+  const home = computed(() => routes.value.filter(r => r.name == "Home")[0])
 
 
-  return { routes };
+  async function load(){
+    const routes = await useSanityQuery<queryResult>(routes_query)
+    routes.value = results_routes
+  }
+
+
+  return { load, get_assets, routes, projects, home };
+
 });

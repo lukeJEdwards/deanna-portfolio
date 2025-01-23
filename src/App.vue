@@ -1,21 +1,6 @@
 <script setup lang="ts">
 import { RouterView, useRouter } from 'vue-router'
-import { useStore } from './store/store';
 import navbar from './components/navbar.vue';
-
-
-const router = useRouter()
-
-const { routes } = useStore();
-
-routes.forEach((r) =>{
-  router.addRoute({
-    path: `/${r.name}`,
-    component: () => import("@/pages/MultiRoute.vue"),
-    name: r.name,
-  })
-}
-);
 
 </script>
 

@@ -76,13 +76,8 @@ export type Project = {
   _rev: string
   title?: string
   subtitle?: string
-  slug?: Slug
-  navigation?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'navigation_category'
-  }
+  slug: Slug
+  navigation: Navigation_category
   project_assets?: Array<{
     asset?: {
       _ref: string
@@ -126,19 +121,14 @@ export type Project = {
   }>
 }
 
-export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
-}
-
 export type Navigation_category = {
   _id: string
   _type: 'navigation_category'
   _createdAt: string
   _updatedAt: string
   _rev: string
-  name?: string
+  name: string
+  path: Slug
   single_page?: boolean
   project_assets?: Array<{
     asset?: {
@@ -229,6 +219,12 @@ export type SanityImageMetadata = {
   isOpaque?: boolean
 }
 
+export type Slug = {
+  _type: 'slug'
+  current: string
+  source?: string
+}
+
 export type AllSanitySchemaTypes =
   | SanityImagePaletteSwatch
   | SanityImagePalette
@@ -236,11 +232,11 @@ export type AllSanitySchemaTypes =
   | SanityFileAsset
   | Geopoint
   | Project
-  | Slug
   | Navigation_category
   | SanityImageCrop
   | SanityImageHotspot
   | SanityImageAsset
   | SanityAssetSourceData
   | SanityImageMetadata
+  | Slug
 export declare const internalGroqTypeReferenceTo: unique symbol

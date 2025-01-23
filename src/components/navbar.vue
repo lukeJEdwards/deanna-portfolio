@@ -1,23 +1,21 @@
 <script setup lang="ts">
-import { useRouter, RouterLink } from 'vue-router';
+import { storeToRefs } from 'pinia';
 import { Icon } from '@iconify/vue';
+import { useRouter, RouterLink } from 'vue-router';
 
 import { useStore } from '@/store/store';
-import { storeToRefs } from 'pinia';
-
-const { routes } = storeToRefs(useStore())
-
+import DropDown from "@/components/DropDown.vue"
 
 const router = useRouter()
+const {formattedRoutes} = storeToRefs(useStore())
 
+formattedRoutes.value.forEach(r => {
+    if (r.name && router.hasRoute(r.name))
+        return
+    router.addRoute(r)
+})
 
-routes.value.forEach(r => router.addRoute(
-    {
-        path: `/${r.name == "Home" ? ' ' : r.name}`,
-        component: () => import("@/pages/MultiRoute.vue"),
-        name: r.name
-    }
-))
+console.log(formattedRoutes.value)
 
 </script>
 
@@ -32,10 +30,11 @@ routes.value.forEach(r => router.addRoute(
             </a>
         </div>
         <ul class="flex flex-col gap-8">
-            <li v-for="route in routes">
-                <RouterLink :to="`/${route.name}`" class="hover:text-slate-200">
+            <li v-for="route in formattedRoutes">
+                <RouterLink v-if="!route.children" :to="route.path" class="hover:text-slate-200">
                     {{ route.name }}
                 </RouterLink>
+                <DropDown v-else :route="route"/>
             </li>
         </ul>
     </nav>
