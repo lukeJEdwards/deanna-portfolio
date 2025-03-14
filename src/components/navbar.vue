@@ -13,7 +13,7 @@ const { routes } = storeToRefs(useStore())
 <template>
     <nav class="flex flex-col p-8 w-1/6 bg-[#967D69] text-white max-h-screen gap-4">
         <div class="flex w-full gap-4 justify-center">
-            <a href="https://www.instagram.com/my_crazycreations_/" target="_blank">
+            <a href="https://www.instagram.com/deannawiggs_illustration/" target="_blank">
                 <Icon icon="mdi:instagram" width="24" height="24" />
             </a>
             <a href="https://www.youtube.com/@DeannaWiggs" target="_blank">
@@ -25,10 +25,7 @@ const { routes } = storeToRefs(useStore())
                 <RouterLink v-if="route.projects == null" :to="route.path.current" class="hover:text-slate-200">
                     {{ route.name }}
                 </RouterLink>
-                <DropDown 
-                    v-else 
-                    :route="route" 
-                    :children="route.projects"/>
+                <DropDown v-else :route="route" :children="route.projects" />
             </li>
         </ul>
     </nav>
