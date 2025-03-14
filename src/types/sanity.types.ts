@@ -13,6 +13,8 @@
  */
 
 // Source: schema.json
+export declare const internalGroqTypeReferenceTo: unique symbol
+
 export type SanityImagePaletteSwatch = {
   _type: 'sanity.imagePaletteSwatch'
   background?: string
@@ -74,12 +76,11 @@ export type Project = {
   _createdAt: string
   _updatedAt: string
   _rev: string
-  title?: string
+  title: string
   subtitle?: string
   slug: Slug
-  navigation: Navigation_category
-  project_assets?: Array<{
-    asset?: {
+  project_assets: Array<{
+    asset: {
       _ref: string
       _type: 'reference'
       _weak?: boolean
@@ -90,8 +91,8 @@ export type Project = {
     _type: 'image'
     _key: string
   }>
-  thumbnail?: {
-    asset?: {
+  thumbnail: {
+    asset: {
       _ref: string
       _type: 'reference'
       _weak?: boolean
@@ -129,9 +130,17 @@ export type Navigation_category = {
   _rev: string
   name: string
   path: Slug
-  single_page?: boolean
+  position: number
+  single_page: boolean
+  projects?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'project'
+  }>
   project_assets?: Array<{
-    asset?: {
+    asset: {
       _ref: string
       _type: 'reference'
       _weak?: boolean
@@ -239,4 +248,3 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageMetadata
   | Slug
-export declare const internalGroqTypeReferenceTo: unique symbol

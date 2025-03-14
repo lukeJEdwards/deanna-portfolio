@@ -1,21 +1,12 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { Icon } from '@iconify/vue';
-import { useRouter, RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router';
 
 import { useStore } from '@/store/store';
 import DropDown from "@/components/DropDown.vue"
 
-const router = useRouter()
-const {formattedRoutes} = storeToRefs(useStore())
-
-formattedRoutes.value.forEach(r => {
-    if (r.name && router.hasRoute(r.name))
-        return
-    router.addRoute(r)
-})
-
-console.log(formattedRoutes.value)
+const { routes } = storeToRefs(useStore())
 
 </script>
 
@@ -30,11 +21,14 @@ console.log(formattedRoutes.value)
             </a>
         </div>
         <ul class="flex flex-col gap-8">
-            <li v-for="route in formattedRoutes">
-                <RouterLink v-if="!route.children" :to="route.path" class="hover:text-slate-200">
+            <li v-for="route in routes">
+                <RouterLink v-if="route.projects == null" :to="route.path.current" class="hover:text-slate-200">
                     {{ route.name }}
                 </RouterLink>
-                <DropDown v-else :route="route"/>
+                <DropDown 
+                    v-else 
+                    :route="route" 
+                    :children="route.projects"/>
             </li>
         </ul>
     </nav>

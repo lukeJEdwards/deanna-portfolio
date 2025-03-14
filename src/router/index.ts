@@ -8,6 +8,11 @@ const routes = [
     component: () => import("@/pages/index.vue"),
   },
   {
+    name: "About",
+    path: "/about",
+    component: () => import("@/pages/about.vue"),
+  },
+  {
     path: "/categories",
     children: [
       {
@@ -34,6 +39,10 @@ const routes = [
         component: () => import("@/pages/projects/[project].vue"),
       },
     ],
+  },
+  {
+    path: "/:single_page",
+    component: () => import("@/pages/[single_page].vue"),
   },
 ];
 

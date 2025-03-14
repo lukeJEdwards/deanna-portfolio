@@ -5,7 +5,6 @@ import { createApp } from 'vue'
 import { router } from './router'
 import App from './App.vue'
 
-import MasonryWall from "@yeger/vue-masonry-wall";
 import { createPinia } from "pinia";
 import { useStore } from './store/store';
 
@@ -15,11 +14,9 @@ const app = createApp(App)
 
 app.use(pinia)
 
-const { load } = useStore()
-await load()
+const { get_nav_routes } = useStore();
+await get_nav_routes();
 
 
 app.use(router)
-
-app.use(MasonryWall)
 app.mount('#app')

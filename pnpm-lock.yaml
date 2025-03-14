@@ -20,9 +20,6 @@ importers:
       '@vueuse/core':
         specifier: ^12.0.0
         version: 12.0.0(typescript@5.7.2)
-      '@yeger/vue-masonry-wall':
-        specifier: ^5.0.16
-        version: 5.0.16(vue@3.5.13(typescript@5.7.2))
       pinia:
         specifier: ^2.3.0
         version: 2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
@@ -679,20 +676,6 @@ packages:
 
   '@vueuse/shared@12.0.0':
     resolution: {integrity: sha512-3i6qtcq2PIio5i/vVYidkkcgvmTjCqrf26u+Fd4LhnbBmIT6FN8y6q/GJERp8lfcB9zVEfjdV0Br0443qZuJpw==}
-
-  '@yeger/debounce@2.0.10':
-    resolution: {integrity: sha512-61K6anfnaJ6ziIXiFOKCqtWCmxy6SeVGxKsG2ae+98SihFo1lT8p/Ny351+sXM5rfa5136u09277JxTXymgalw==}
-
-  '@yeger/vue-lib-adapter@2.0.10':
-    resolution: {integrity: sha512-rHmTZxdrpuh+BheAjQcCZrY4ERpMGpLZHYY99nsqd5RoG1nXXzRkhhNlT3tfWlikW0Wr8UpoxA+/dOlYrCDrtQ==}
-
-  '@yeger/vue-masonry-wall-core@5.0.13':
-    resolution: {integrity: sha512-Sh4kj9uijz/SPy6M0ryVcakIIB31rw6FRlDGZYCADT6ublAYB+39MCcTITIUPAsFtEqk4Nl0IMCS6Gs29LDYVA==}
-
-  '@yeger/vue-masonry-wall@5.0.16':
-    resolution: {integrity: sha512-UbgQhUSwtsALa4ovW/zYCaQjgxIsKQsGNQffE2Lx/hzbNjPoP6wluBbWbQWszPSEEw1wh3JfcVx5uvoH5dK6Rg==}
-    peerDependencies:
-      vue: ^3.0.0
 
   alien-signals@0.2.2:
     resolution: {integrity: sha512-cZIRkbERILsBOXTQmMrxc9hgpxglstn69zm+F1ARf4aPAzdAFYd6sBq87ErO0Fj3DV94tglcyHG5kQz9nDC/8A==}
@@ -2219,20 +2202,6 @@ snapshots:
       vue: 3.5.13(typescript@5.7.2)
     transitivePeerDependencies:
       - typescript
-
-  '@yeger/debounce@2.0.10': {}
-
-  '@yeger/vue-lib-adapter@2.0.10': {}
-
-  '@yeger/vue-masonry-wall-core@5.0.13':
-    dependencies:
-      '@yeger/debounce': 2.0.10
-      '@yeger/vue-lib-adapter': 2.0.10
-
-  '@yeger/vue-masonry-wall@5.0.16(vue@3.5.13(typescript@5.7.2))':
-    dependencies:
-      '@yeger/vue-masonry-wall-core': 5.0.13
-      vue: 3.5.13(typescript@5.7.2)
 
   alien-signals@0.2.2: {}
 
