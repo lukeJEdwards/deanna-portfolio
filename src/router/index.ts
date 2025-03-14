@@ -1,3 +1,4 @@
+import { useTitle } from "@vueuse/core";
 import { createRouter, createWebHistory} from "vue-router";
 
 
@@ -49,5 +50,20 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes
+});
+
+router.beforeEach((to, from) => {
+  if (to.path == "/") {
+    useTitle(to.name?.toString());
+    return;
+  }
+  if(to.name){
+    useTitle(`${to.name.toString()} - Deanna Wiggs`);
+  }else{
+    const cat = to.params.category;
+    const project = to.params.project;
+    const single_page = to.params.single_page;
+    useTitle(`${cat || project || single_page} - Deanna Wiggs`);
+  }
 });
 

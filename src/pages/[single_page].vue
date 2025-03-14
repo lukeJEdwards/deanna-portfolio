@@ -3,6 +3,7 @@ import { useStore } from '@/store/store';
 import { useRoute } from 'vue-router';
 
 import masonary_wall from "@/components/masonary_wall.vue";
+import { useTitle } from '@vueuse/core';
 
 
 const route = useRoute()

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useImageBuilder } from "@/composables/useImageBuilder"
 import { useStore } from '@/store/store';
+import { useTitle } from "@vueuse/core";
 
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';

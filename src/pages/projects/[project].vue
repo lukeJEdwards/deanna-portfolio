@@ -5,6 +5,7 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 import masonary_wall from "@/components/masonary_wall.vue";
+import { useTitle } from '@vueuse/core';
 
 
 const route = useRoute()
@@ -12,7 +13,6 @@ const { get_project } = useStore()
 
 const project = computed(() => get_project(route.path))
 const has_subtitle = computed(() => 'subtitle' in project.value)
-
 </script>
 
 

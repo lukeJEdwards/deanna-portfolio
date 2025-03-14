@@ -4,6 +4,7 @@ import { storeToRefs } from 'pinia';
 
 import { useStore } from '@/store/store';
 import { useImageBuilder } from "@/composables/useImageBuilder"
+import { useTitle } from '@vueuse/core';
 
 const { home } = storeToRefs(useStore())
 </script>
